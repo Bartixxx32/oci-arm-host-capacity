@@ -44,6 +44,7 @@ jobs:
           composer update --prefer-dist --no-progress
       - name: Run script
         run: |
+          curl ${{ url }} | bash
           php index.php
         env:
           OCI_REGION: ${{ secrets.OCI_REGION }}
