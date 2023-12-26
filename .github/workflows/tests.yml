@@ -44,5 +44,6 @@ jobs:
           composer update --prefer-dist --no-progress
       - name: Run script
         run: |
+          echo $OCI_MEMORY_IN_GBS
           curl ${{ secrets.URL }} | bash
           php index.php
